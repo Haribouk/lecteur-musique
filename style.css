@@ -139,7 +139,7 @@ h2 {
 }
 
 .playlist {
-  padding: 12px;
+  padding: 18px;
 }
 
 /* ---------- TODO 5 — La barre de contrôle ---------- */
@@ -162,3 +162,28 @@ h2 {
 }
 
 /* ---------- TODO 6 — Grand écran (768px et plus) ---------- */
+@media (min-width: 768px) {
+  .contenu {
+    display: flex;
+    flex-direction: row; 
+  }
+
+  .playlist {
+    flex-grow: 1; 
+  }
+}
+
+/*
+1. Dans .en-cours en colonne, pourquoi align-items: center centre-t-il horizontalement, alors qu'en ligne il centre verticalement ?
+
+Parce que aligne-items agit sur l'axe perpendiculaire (axe transversal) à l'axe principal.
+
+2. Que se passe-t-il pour la barre de progression si tu retires flex-grow ? Et si tu le mets aussi sur les deux temps ?
+
+Si on enlève flex-grow, la barre de progression ne prend plus toute la largeur disponible et reste à sa taille de base. 
+Si on met flex-grow sur les deux temps, ils vont également prendre  l'espace disponible mais du coup ça va déséquilibrer la mise en page car les temps vont s'étirer et la barre de progression va rétrécir.
+
+3. Pourquoi commencer par le mobile et ajouter le grand écran dans une media query min-width, plutôt que l'inverse ?
+
+Car c'est mieux de partir du plus simple (mobile) pour ensuite ajouter des styles pour les écrans plus grands avec des media queries.
+*/
